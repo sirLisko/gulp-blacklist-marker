@@ -1,0 +1,24 @@
+{
+  "name": "gulp-blacklist-marker",
+  "version": "0.1.0",
+  "description": "Chrome Extension that marks blacklisted gulp modules when browsing NPM.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sirLisko/gulp-blacklist-marker.git"
+  },
+  "keywords": [
+    "gulp",
+    "blacklist",
+    "marker",
+    "npm",
+    "chrome-extension"
+  ],
+  "author": "Luca Lischetti <sirlisko@gmail.com> (http://sirlisko.com)",
+  "bugs": {
+    "url": "https://github.com/sirLisko/gulp-blacklist-marker/issues"
+  },
+  "homepage": "https://github.com/sirLisko/gulp-blacklist-marker"
+}
