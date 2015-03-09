@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Chrome Extension that marks blacklisted gulp modules when browsing NPM.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/sirLisko/gulp-blacklist-marker/issues"
   },
-  "homepage": "https://github.com/sirLisko/gulp-blacklist-marker"
+  "homepage": "https://github.com/sirLisko/gulp-blacklist-marker",
+  "devDependencies": {
+    "mocha": "^2.2.1",
+    "request": "^2.53.0"
+  }
 }

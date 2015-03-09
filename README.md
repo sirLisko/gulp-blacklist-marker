@@ -1,4 +1,4 @@
-Gulp Blacklist Marker
+Gulp Blacklist Marker [![Build Status](https://travis-ci.org/sirLisko/gulp-blacklist-marker.svg)](https://travis-ci.org/sirLisko/gulp-blacklist-marker)
 ========
 
-Chrome Extension that marks blacklisted gulp modules when browsing NPM.
+Chromes Extension that marks [blacklisted](https://github.com/gulpjs/plugins/blob/master/src/blackList.json) gulp modules when browsing NPM.
