@@ -1,12 +1,13 @@
 {
 	"name": "Gulp Blacklist Marker",
-	"version": "0.1.0",
-	"description": "Marks blacklisted gulp modules when browsing NPM.",
+	"version": "0.2.0",
+	"description": "it marks blacklisted gulp modules when browsing (NPM and GitHub).",
 	"manifest_version": 2,
 	"content_scripts": [
 		{
 			"matches": [
-				"https://www.npmjs.com/*"
+				"https://www.npmjs.com/*",
+				"https://github.com/*"
 			],
 			"js": ["base.js"]
 		}

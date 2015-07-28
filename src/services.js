@@ -13,10 +13,13 @@ function isBlackListed(blackList){
 	};
 }
 
-function checkNpm(blackList){
-	Array.prototype.filter.call(document.querySelectorAll('.package-name, .name'), isBlackListed(blackList)).forEach(markBlackListed(blackList));
+function checkBlackListed(selector){
+	return function(blackList){
+		Array.prototype.filter.call(document.querySelectorAll(selector), isBlackListed(blackList)).forEach(markBlackListed(blackList));
+	};
 }
 
 module.exports = {
-	npm: checkNpm
+	npm: checkBlackListed('.package-name, .name'),
+	github: checkBlackListed('h1, h1 strong')
 };

@@ -28,9 +28,15 @@ module.exports = fetchBlackList;
 var fetchBlacklist = require('./fetchBlackList');
 var service = require('./services');
 
-if (window.location.hostname === 'www.npmjs.com') {
-	fetchBlacklist(service.npm);
+var page = window.location.hostname, serviceName;
+
+if (page === 'www.npmjs.com') {
+	serviceName = 'npm';
+} else if (page === 'github.com') {
+	serviceName = 'github';
 }
+
+fetchBlacklist(service[serviceName]);
 
 },{"./fetchBlackList":1,"./services":3}],3:[function(require,module,exports){
 'use strict';
@@ -48,12 +54,15 @@ function isBlackListed(blackList){
 	};
 }
 
-function checkNpm(blackList){
-	Array.prototype.filter.call(document.querySelectorAll('.package-name, .name'), isBlackListed(blackList)).forEach(markBlackListed(blackList));
+function checkBlackListed(selector){
+	return function(blackList){
+		Array.prototype.filter.call(document.querySelectorAll(selector), isBlackListed(blackList)).forEach(markBlackListed(blackList));
+	};
 }
 
 module.exports = {
-	npm: checkNpm
+	npm: checkBlackListed('.package-name, .name'),
+	github: checkBlackListed('h1, h1 strong')
 };
 
 },{}]},{},[2]);
