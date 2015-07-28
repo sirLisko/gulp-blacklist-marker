@@ -8,7 +8,11 @@ var page = window.location.hostname, serviceName;
 if (page === 'www.npmjs.com') {
 	serviceName = 'npm';
 } else if (page === 'github.com') {
-	serviceName = 'github';
+	if (window.location.href.split('/').pop() === 'package.json') {
+		serviceName = 'githubpackage';
+	} else {
+		serviceName = 'github';
+	}
 }
 
 fetchBlacklist(service[serviceName]);

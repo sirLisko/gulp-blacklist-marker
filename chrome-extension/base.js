@@ -33,7 +33,11 @@ var page = window.location.hostname, serviceName;
 if (page === 'www.npmjs.com') {
 	serviceName = 'npm';
 } else if (page === 'github.com') {
-	serviceName = 'github';
+	if (window.location.href.split('/').pop() === 'package.json') {
+		serviceName = 'githubpackage';
+	} else {
+		serviceName = 'github';
+	}
 }
 
 fetchBlacklist(service[serviceName]);
@@ -44,13 +48,13 @@ fetchBlacklist(service[serviceName]);
 function markBlackListed(blackList){
 	return function(pack){
 		pack.style.textDecoration = 'line-through';
-		pack.title = blackList[pack.innerText.trim()];
+		pack.title = blackList[pack.innerText.trim().replace(/['"]+/g, '')];
 	};
 }
 
 function isBlackListed(blackList){
 	return function(pack){
-		return blackList[pack.innerText.trim()];
+		return blackList[pack.innerText.trim().replace(/['"]+/g, '')];
 	};
 }
 
@@ -62,7 +66,8 @@ function checkBlackListed(selector){
 
 module.exports = {
 	npm: checkBlackListed('.package-name, .name'),
-	github: checkBlackListed('h1, h1 strong')
+	github: checkBlackListed('h1, h1 strong'),
+	githubpackage: checkBlackListed('.blob-wrapper.data .pl-s')
 };
 
 },{}]},{},[2]);
