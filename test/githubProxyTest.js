@@ -3,7 +3,7 @@
 var test = require('tape');
 var request = require('request');
 
-var blackListUrl = 'https://github-raw-cors-proxy.herokuapp.com/gulpjs/plugins/master/src/blackList.json';
+var blackListUrl = 'https://raw.githubusercontent.com/gulpjs/plugins/master/src/blackList.json';
 
 test('github proxy cors for raw files is working properly', function(t){
 	request(blackListUrl, function (error, response) {

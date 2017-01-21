@@ -1,7 +1,6 @@
 'use strict';
 
-//var blackListUrl = 'https://raw.githubusercontent.com/gulpjs/plugins/master/src/blackList.json';
-var blackListUrl = 'https://github-raw-cors-proxy.herokuapp.com/gulpjs/plugins/master/src/blackList.json';
+var blackListUrl = 'https://raw.githubusercontent.com/gulpjs/plugins/master/src/blackList.json';
 
 function onLoad(cb){
 	return function(e){
