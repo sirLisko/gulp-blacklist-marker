@@ -1,6 +1,6 @@
 {
 	"name": "Gulp Blacklist Marker",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "it marks blacklisted gulp modules when browsing (NPM and GitHub).",
 	"manifest_version": 2,
 	"content_scripts": [

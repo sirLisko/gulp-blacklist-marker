@@ -1,10 +1,10 @@
 {
   "name": "gulp-blacklist-marker",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Chrome Extension that marks blacklisted gulp modules when browsing (NPM and GitHub).",
   "scripts": {
     "build": "node_modules/.bin/browserify src/main.js -o chrome-extension/base.js",
-    "test": "node_modules/.bin/tape ./test/*.js"
+    "test": "node_modules/.bin/eslint src && node_modules/.bin/tape ./test/*.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,22 @@
   "homepage": "https://github.com/sirLisko/gulp-blacklist-marker",
   "devDependencies": {
     "browserify": "^11.0.0",
+    "eslint": "^3.14.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
     "request": "^2.53.0",
     "tape": "^4.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard"
+    ],
+    "plugins": [
+      "standard"
+    ],
+    "env": {
+      "browser": true
+    }
   }
 }
