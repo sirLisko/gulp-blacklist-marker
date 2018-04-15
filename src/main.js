@@ -10,7 +10,7 @@ if (page === 'www.npmjs.com') {
   serviceName = 'npm'
 } else if (page === 'github.com') {
   if (window.location.href.split('/').pop() === 'package.json') {
-    serviceName = 'githubpackage'
+    serviceName = 'githubPackage'
   } else {
     serviceName = 'github'
   }

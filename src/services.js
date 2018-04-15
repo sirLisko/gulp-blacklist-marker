@@ -20,7 +20,7 @@ function checkBlackListed (selector) {
 }
 
 module.exports = {
-  npm: checkBlackListed('.package-name, .name'),
+  npm: checkBlackListed('[class^=package__name], [class^=package-list-item__title]'),
   github: checkBlackListed('h1, h1 strong'),
-  githubpackage: checkBlackListed('.blob-wrapper.data .pl-s')
+  githubPackage: checkBlackListed('.blob-wrapper.data .pl-s')
 }
