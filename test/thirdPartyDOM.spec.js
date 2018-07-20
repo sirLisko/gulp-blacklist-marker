@@ -7,7 +7,7 @@ var request = require('request')
 var cheerio = require('cheerio')
 
 var NPMPackageURL = 'https://www.npmjs.com/package/gulp-clean'
-var NPMSearchURL = 'https://www.npmjs.com/search?q=gulp-clean'
+var NPMSearchURL = 'https://www.npmjs.com/search?q=gulp-css'
 var GithubPackageURL = 'https://github.com/sirLisko/sirlisko.com/blob/5c88c52cab8d7dd9768ebfcc2d7cd21790f99865/package.json'
 var GithubModuleURL = 'https://github.com/robrich/gulp-rimraf'
 
@@ -26,7 +26,7 @@ test('NPM Package DOM is still correct', function (t) {
 test('NPM Search DOM is still correct', function (t) {
   request(NPMSearchURL, function (error, response) {
     const $ = cheerio.load(response.body)
-    t.equal($(NPMSelector).first().text(), 'gulp-clean', 'module name found')
+    t.equal($(NPMSelector).first().text(), 'gulp-css', 'module name found')
     t.end()
   })
 })
