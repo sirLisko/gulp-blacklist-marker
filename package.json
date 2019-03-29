@@ -1,6 +1,6 @@
 {
   "name": "gulp-blacklist-marker",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Chrome Extension that marks blacklisted gulp modules when browsing (NPM and GitHub).",
   "scripts": {
     "build": "browserify src/main.js -o chrome-extension/base.js && cross-zip chrome-extension",
