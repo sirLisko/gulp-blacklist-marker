@@ -1,5 +1,12 @@
 'use strict'
 
+const SELECTORS = {
+  npm: '.items-end h3',
+  npmPackage: '[class*=package-name], main h2 [title]',
+  github: '.Box-body h1, h1 strong',
+  githubPackage: '.blob-wrapper.data .pl-s'
+}
+
 function markBlackListed (blackList) {
   return function (pack) {
     pack.style.textDecoration = 'line-through'
@@ -20,7 +27,9 @@ function checkBlackListed (selector) {
 }
 
 module.exports = {
-  npm: checkBlackListed('[class^=package__name], [class^=package-list-item__title]'),
-  github: checkBlackListed('h1, h1 strong'),
-  githubPackage: checkBlackListed('.blob-wrapper.data .pl-s')
+  SELECTORS: SELECTORS,
+  npm: checkBlackListed(SELECTORS.npm),
+  npmPackage: checkBlackListed(SELECTORS.npmPackage),
+  github: checkBlackListed(SELECTORS.github),
+  githubPackage: checkBlackListed(SELECTORS.githubPackage)
 }

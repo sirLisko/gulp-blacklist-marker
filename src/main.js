@@ -7,13 +7,13 @@ var page = window.location.hostname
 var serviceName
 
 if (page === 'www.npmjs.com') {
-  serviceName = 'npm'
+  serviceName = window.location.href.indexOf('search') !== -1
+    ? 'npm'
+    : 'npmPackage'
 } else if (page === 'github.com') {
-  if (window.location.href.split('/').pop() === 'package.json') {
-    serviceName = 'githubPackage'
-  } else {
-    serviceName = 'github'
-  }
+  serviceName = window.location.href.split('/').pop() === 'package.json'
+    ? 'githubPackage'
+    : 'github'
 }
 
 fetchBlacklist(service[serviceName])
