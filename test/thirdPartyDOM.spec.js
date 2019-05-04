@@ -9,7 +9,7 @@ var cheerio = require('cheerio')
 var SELECTORS = require('../src/services').SELECTORS
 
 var NPMPackageURL = 'https://www.npmjs.com/package/gulp-clean'
-var NPMSearchURL = 'https://www.npmjs.com/search?q=gulp-css'
+var NPMSearchURL = 'https://www.npmjs.com/search?q=gulp-clean'
 var GithubPackageURL =
   'https://github.com/sirLisko/sirlisko.com/blob/5c88c52cab8d7dd9768ebfcc2d7cd21790f99865/package.json'
 var GithubModuleURL = 'https://github.com/robrich/gulp-rimraf'
@@ -36,7 +36,7 @@ test('NPM Search DOM is still correct', function (t) {
       $(SELECTORS.npm)
         .first()
         .text(),
-      'gulp-css',
+      'gulp-clean',
       'module name found'
     )
     t.end()
